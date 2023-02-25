@@ -1,0 +1,12 @@
+cff-version: 1.1.0
+message: "Optimizing cloud motion estimation on the edge with phase
+correlation and optical flow."
+authors:
+  - family-names: Bhupendra
+    given-names: Raut
+    orcid: https://orcid.org/0000-0001-5598-1393
+title: Optimizing cloud motion estimation on the edge with phase
+correlation and optical flow.
+doi: 10.5281/zenodo.7676068 
+version: v1.23.02
+date-released: 2023-02-25
