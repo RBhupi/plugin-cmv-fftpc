@@ -27,10 +27,10 @@ The plugin has several arguments that can be set by the user:
     '--c': RGB channels, 0=R, 1=G, 2=B (Default 0 i.e. Red).
     '--k': Keep fraction of the image after cropping (Default=0.9).
     '--q': Quality of the motion field (Default 1). Sets averaging window, poly_n and poly_sigma. 1-turbulant: detailed motion field but noisy. 2-smooth: lesser noise and fast computation.
-
+    '--thr': Upload the images if magnitude crosses this value (Default=10).
 ## Ontology
 
-The plugin will publish mean direction and and mean velocity of the cloud motion (cmv.mean.dir, cmv.mean.vel).
+The plugin will publish mean direction and and mean velocity of the cloud motion (cmv.mean.dir, cmv.mean.vel). The plugin will also publish images when the mean cloud speed is higher than a threshold.
 
 
 ## Inference from Sage codes
@@ -52,13 +52,13 @@ print(df)
 For more information, please see [Access and use data documentation](https://docs.sagecontinuum.org/docs/tutorials/accessing-data) and [sage_data_client](https://pypi.org/project/sage-data-client/).
 
 ### References
-[1] Raut, B. A., Collis, S., Ferrier, N., Muradyan, P., Sankaran, R., Jackson, R., ... & Beckman, P. "Phase correlation on the edge for estimating cloud motion". Atmospheric Measurement Techniques Discussions, 2022, 1-18.
-
+[1] Raut, B. A., Muradyan, P., Sankaran, R., Jackson, R., Park S.,  Shahkarami S. A.,  Dematties, D., Kim, Y., Swantek, J., Conrad, N., Gerlach, W.,  Shemyakin, S., Beckman, P., Ferrier, N., Collis, S., "Optimizing cloud motion estimation on the edge with phase  correlation and optical flow". Atmospheric Measurement Techniques Discussions, 2023, 1-15. https://doi.org/10.5194/amt-2022-159
 [2] Farnebäck, Gunnar. "Two-frame motion estimation based on polynomial expansion." _Scandinavian conference on Image analysis_. Springer, Berlin, Heidelberg, 2003.
 
 ### Credits
 ecr-icon.jpg  Wheat Field with Cypresses, Vincent van Gogh (Dutch), 1889.  
 https://www.metmuseum.org/art/collection/search/436535  
 https://www.metmuseum.org/about-the-met/policies-and-documents/image-resources  
+
 
 
