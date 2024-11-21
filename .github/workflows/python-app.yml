@@ -1,0 +1,38 @@
+name: Python Application CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository
+    - uses: actions/checkout@v4
+
+    # Set up Docker
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v2
+
+    # Build the Docker image
+    - name: Build Docker Image
+      run: |
+        docker build -t plugin-cmv .
+
+    # Install pytest and Run Tests
+    - name: Run Tests
+      run: |
+        docker run --rm --entrypoint sh plugin-cmv -c "
+        pip install pytest &&
+        pytest /app/test_app.py
+        "
+
+
